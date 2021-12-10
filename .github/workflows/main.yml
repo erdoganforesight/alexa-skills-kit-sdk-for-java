@@ -32,9 +32,7 @@ jobs:
           java-version: '8'
       - name: Thundra Maven Test Instrumentation
         uses: thundra-io/thundra-maven-test-action@v1
-        env:
-          THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.me/v1
         with:
-          apikey: fc454b20-61a2-4391-9408-ac05d8680569
-          project_id: 9b3eac31-1cd1-43db-9ca1-878d3306a9b5
+          apikey: c457da56-5851-432d-ac1d-6c4cdc80f414
+          project_id: 63396039-3626-4036-9038-48ae32088307
           command: mvn clean install
