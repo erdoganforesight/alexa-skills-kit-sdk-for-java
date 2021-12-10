@@ -33,7 +33,7 @@ jobs:
       - name: Thundra Maven Test Instrumentation
         uses: thundra-io/thundra-maven-test-action@v1
         env:
-           THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.me/v1
+           THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.us/v1
         with:
           apikey: c3693afe-c476-426a-8480-d88f1a2ec73c
           project_id: 6f9ebab3-9a8d-4cc5-88d0-2d1110385298
