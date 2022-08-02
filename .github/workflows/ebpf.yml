@@ -21,11 +21,14 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Collect Workflow Telemetry
-        uses: thundra-io/workflow-telemetry-action@feature/proc-tracer
+        uses: runforesight/foresight-workflow-kit-action@v1
+        with:
+          api_key: 7c640ef6-7bfb-4e2e-acd7-78997448baa6
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
         uses: actions/setup-java@v2
@@ -42,4 +45,8 @@ jobs:
           path: |
             target
             **/target
+      - name: Analyze Test and/or Coverage Results
+        uses: thundra-io/foresight-test-kit-action@v1
+        with:
+          api_key: 7c640ef6-7bfb-4e2e-acd7-78997448baa6
 
