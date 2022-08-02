@@ -47,6 +47,7 @@ jobs:
             **/target
       - name: Analyze Test and/or Coverage Results
         uses: thundra-io/foresight-test-kit-action@v1
+        test_framework: JUNIT
         with:
           api_key: 7c640ef6-7bfb-4e2e-acd7-78997448baa6
 
