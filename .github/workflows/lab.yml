@@ -46,6 +46,6 @@ jobs:
         # d06a3675-c8ac-4fbf-a80d-b0e5aaae4924
         test_format: JUNIT
         test_framework: JUNIT
-        test_path: /ask-sdk-core/target/surefire-reports/
+        test_path: /ask-sdk-core/target/surefire-reports/**
         coverage_format: jacoco/xml
         coverage_path: /ask-sdk-core/target/site/jacoco/*.xml
