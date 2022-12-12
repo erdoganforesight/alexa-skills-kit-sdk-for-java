@@ -48,4 +48,4 @@ jobs:
         test_framework: JUNIT
         test_path: target/surefire-reports/
         coverage_format: jacoco/xml
-        coverage_path: target/site/jacoco/*.xml
+        coverage_path: /ask-sdk-core/target/site/jacoco/*.xml
