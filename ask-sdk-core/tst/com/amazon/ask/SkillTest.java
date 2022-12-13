@@ -74,6 +74,16 @@ public class SkillTest {
         ResponseEnvelope responseEnvelope = skill.invoke(envelope);
         assertEquals(responseEnvelope.getResponse(), response);
     }
+    
+        @Test
+    public void non_empty_handler_response_wrapped_in_response_envelope_demo() {
+        Response response = Response.builder().build();
+        when(mockAdapter.supports(any())).thenReturn(true);
+        when(mockAdapter.execute(any(), any())).thenReturn(Optional.of(response));
+        RequestEnvelope envelope = RequestEnvelope.builder().withRequest(IntentRequest.builder().build()).build();
+        ResponseEnvelope responseEnvelope = skill.invoke(envelope);
+        assertEquals(responseEnvelope.getResponse(), response);
+    }
 
     @Test
     public void empty_handler_response_returns_envelope_with_empty_response() {
@@ -116,6 +126,7 @@ public class SkillTest {
                 .build();
         skill= new Skill(skillConfiguration);
         assertNull(skill.invoke(envelope));
+        
     }
 
     @Test
