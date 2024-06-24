@@ -85,6 +85,15 @@ public class JacksonSerializerTest {
     }
 
     @Test
+    public void deserialize_from_string_correct_input_to_serializer_demo() throws IOException {
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        when(mockMapper.readValue("foo", RequestEnvelope.class)).thenReturn(requestEnvelope);
+        serializer.deserialize("foo", RequestEnvelope.class);
+        verify(mockMapper).readValue(captor.capture(), any(Class.class));
+        assertEquals(captor.getValue(), "foo");
+    }
+    
+    @Test
     public void deserialize_from_string_correct_output_from_mapper() throws IOException {
         when(mockMapper.readValue("foo", RequestEnvelope.class)).thenReturn(requestEnvelope);
         assertEquals(serializer.deserialize("foo", RequestEnvelope.class), requestEnvelope);
